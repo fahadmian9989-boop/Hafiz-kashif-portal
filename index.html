@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hafiz Muhammad Kashif Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <div id="login-card" class="card main-card">
+            <div class="card-header">
+                <i class="fa-solid fa-graduation-cap logo-icon animated"></i>
+                <h2>Computer Education Portal</h2>
+                <p>Authorized Access Only</p>
+            </div>
+            
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="username" placeholder="Username" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </button>
+            </form>
+            
+            <div class="card-footer">
+                <button class="link-btn" onclick="toggleView(true)">
+                    <i class="fa-solid fa-key"></i> Change Password
+                </button>
+            </div>
+        </div>
+
+        <div id="password-card" class="card main-card hidden">
+            <div class="card-header">
+                <i class="fa-solid fa-shield-halved logo-icon animated"></i>
+                <h2>Change Password</h2>
+                <p>Secure your educational account</p>
+            </div>
+            
+            <form id="password-form" onsubmit="handleChangePassword(event)">
+                <div class="input-group">
+                    <i class="fa-solid fa-unlock input-icon"></i>
+                    <input type="password" id="old-password" placeholder="Current Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-key input-icon"></i>
+                    <input type="password" id="new-password" placeholder="New Password" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-check-double input-icon"></i>
+                    <input type="password" id="confirm-password" placeholder="Confirm New Password" required>
+                </div>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="toggleView(false)">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed for Hafiz Muhammad Kashif &copy; 2026</p>
+    </footer>
+
+    <div id="custom-alert" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAlert()">&times;</span>
+            <p id="alert-message"></p>
+            <button class="btn btn-primary alert-ok-btn" onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
